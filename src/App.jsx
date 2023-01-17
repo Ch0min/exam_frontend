@@ -9,6 +9,8 @@ import Home from "./pages/Home.jsx";
 import SignIn from "./pages/SignIn.jsx";
 import SignUp from "./pages/SignUp.jsx";
 
+import cphbusinesslogo from "./images/cphbusinesslogo.png"
+
 function App() {
     const [loggedIn, setLoggedIn] = useState(false)
 
@@ -29,6 +31,17 @@ function App() {
 
 
             </Routes>
+
+            <footer className="container">
+                &copy;Copyright 2023 | <a
+                href="https://www.cphbusiness.dk/"
+                target="_blank"
+                rel="noreferrer noopener"
+            >cphbusiness</a>
+                <p className="footer-right">
+                    <img src={cphbusinesslogo} width="175px" height="30px"/>
+                </p>
+            </footer>
 
         </div>
     )

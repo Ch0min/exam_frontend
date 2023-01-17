@@ -54,76 +54,12 @@ input[type=text], input[type=password], input[type=number] {
     width: 100%;
 }
 
-
-/*** HARBOUR LAYOUT ***/
-
-/* Left and right blocks */
-.harbours-content h1 {
-    text-align: center;
-    margin-top: 20px;
-    margin-right: 20px;
+.signin-btn:hover {
+    background-color: #327f86;
 }
 
-.harbour-container {
-    display: grid;
-}
-
-.harbour1-content {
-    grid-column: 1;
-    display: block;
-    margin: 5% 18%;
-    max-width: 500px;
-    width: 100%;
-    border: 1px solid #04444b;
-    padding: 0;
-    font-family: Arial, Times, serif;
-    max-height: 1024px;
-
-    box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.5);
-
-}
-
-.harbour2-content {
-    grid-column: 2;
-    display: block;
-    margin: 5% 10%;
-    max-width: 500px;
-    width: 100%;
-    padding: 0;
-    border: 1px solid #04444b;
-    font-family: sans-serif;
-    max-height: 1024px;
-    box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.5);
-}
-
-.harbour1-content p, h2,
-.harbour2-content p, h2 {
-    display: block;
-    margin: auto;
-    max-width: 768px;
-    max-height: 1024px;
-    padding: 10px 10px;
-    color: rgba(0, 0, 0, 0.87);
-    font-family: sans-serif;
-}
-
-.harbours-btn {
-    width: 100%;
-    margin: 0px;
-    background-color: #65a3a9;
-    border: none;
-    color: white;
-    padding: 10px 6px;
-    font-size: 18px;
-    font-weight: bold;
-    font-family: sans-serif;
-
-}
-
-.harbours-btn:hover {
-    background-color: #1d7781;
-    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    cursor: pointer;
+.signup-btn:hover {
+    background-color: #327f86;
 }
 
 
