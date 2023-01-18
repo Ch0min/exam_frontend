@@ -9,6 +9,10 @@ function RentalFacade() {
         return apiFacade.fetchData("rentals/all", updateAction, setErrorMessage)
     }
 
+    const getRentalsByTenant = (tenantUserName, updateAction, setErrorMessage) => {
+        return apiFacade.fetchData("rentals/" + tenantUserName, updateAction, setErrorMessage)
+    }
+
     const createRental = (rentalStartDate, rentalEndDate, rentalPriceAnnual, rentalDeposit, rentalContactPerson, houseID) => {
         const options = apiFacade.makeOptions("POST", null,
             {
@@ -30,6 +34,13 @@ function RentalFacade() {
         return fetch(API_URL + "/api/rentals/assign/" + rentalID + "/" + houseID, options)
             .then(apiFacade.handleHttpErrors)
     }
+
+    const assignRentalToTenant = (rentalID, tenantID) => {
+        const options = apiFacade.makeOptions("POST", null, null);
+        return fetch(API_URL + "/api/rentals/assignToTenant/" + rentalID + "/" + tenantID, options)
+            .then(apiFacade.handleHttpErrors)
+    }
+
 
     const updateRental = (rentalID, rentalStartDate, rentalEndDate, rentalPriceAnnual, rentalDeposit, rentalContactPerson, houseID) => {
         const options = apiFacade.makeOptions("PUT", null,
@@ -58,8 +69,10 @@ function RentalFacade() {
 
     return {
         getAllRentals,
+        getRentalsByTenant,
         createRental,
         assignRentalToHouse,
+        assignRentalToTenant,
         updateRental,
         deleteRental
     }

@@ -8,6 +8,10 @@ import Header from "./components/Header.jsx";
 import Home from "./pages/Home.jsx";
 import SignIn from "./pages/SignIn.jsx";
 import SignUp from "./pages/SignUp.jsx";
+import MyRentalAgreements from "./pages/MyRentalAgreements.jsx";
+import Houses from "./components/Houses.jsx";
+import AdminPanel from "./pages/AdminPanel.jsx";
+import SignUpConfirmation from "./pages/SignUpConfirmation.jsx";
 
 import cphbusinesslogo from "./images/cphbusinesslogo.png"
 
@@ -26,6 +30,12 @@ function App() {
                 <Route path="/" element={<Home />}/>
                 <Route path="signin" element={!loggedIn ? <SignIn setLoggedIn={setLoggedIn} /> : <Home loggedIn={loggedIn} />}/>
                 <Route path="signup" element={<SignUp />}/>
+
+                <Route path="myrentalagreements" element={<MyRentalAgreements />}/>
+                <Route path="adminpanel" element={<AdminPanel />}/>
+                <Route path="houses" element={<Houses />}/>
+                <Route path="signupconfirmation" element={<SignUpConfirmation />}/>
+
 
                 <Route path="*" element={<h1>Page Not Found!!!</h1>}/>
 

@@ -2,6 +2,7 @@ import apiFacade from "./apiFacade.js";
 import {API_URL} from "../../settings.js";
 
 import React from 'react';
+import loginFacade from "./loginFacade.js";
 
 function HouseFacade() {
 
@@ -26,11 +27,21 @@ function HouseFacade() {
             .then(apiFacade.handleHttpErrors)
     }
 
+    const getHouseID = () => {
+        const token = loginFacade.getToken()
+        if (token != null) {
+            const payloadBase64 = loginFacade.getToken().split('.')[1]
+            const decodedClaims = JSON.parse(window.atob(payloadBase64))
+            return decodedClaims.username.tenant.rental.house.houseID
+        } else return ""
+    }
+
 
     return {
         getAllHouses,
         getHouseByID,
-        createHouse
+        createHouse,
+        getHouseID
     }
 
 }

@@ -16,7 +16,6 @@ function SignIn(props) {
         login(loginCredentials.username, loginCredentials.password);
     }
 
-// Exception messages
     const login = (user, pass) => {
         loginFacade.login(user, pass)
             .then(() => props.setLoggedIn(true))

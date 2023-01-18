@@ -33,7 +33,7 @@ function SignUp() {
 
     const signUp = (user, email, password) => {
         userFacade.createUser(user, email, password)
-            .then(() => navigate("/"))
+            .then(() => navigate("/signupconfirmation"))
             .catch(async err => {
                 if (err.status) {
                     setError(await err.fullError.then(e => e.message))
