@@ -21,7 +21,7 @@ function Houses(props) {
 
     return (
         <div>
-            <h1>HOUSES</h1>
+            <h2>HOUSES</h2>
 
             <table>
                 <thead>

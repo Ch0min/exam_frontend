@@ -41,10 +41,10 @@ function APAssignRentalToTenant(props) {
                                 <tbody>
                                 <tr>
                                     <td>
-                                        <input type="number" placeholder="ASSIGN RENTAL ID" name="rental_id" id="rentalID"/>
+                                        <input type="number" placeholder="CHANGE RENTAL" name="rental_id" id="rentalID"/>
                                     </td>
                                     <td>
-                                        <input type="number" placeholder="TO TENANT ID" name="tenant_id" id="tenantID"/>
+                                        <input type="number" placeholder="FOR TENANT BY ID" name="tenant_id" id="tenantID"/>
                                     </td>
                                     <td>
                                         <button className="btn-standard" onClick={performAssign} type="submit" style={{fontSize: "24px"}}>Assign</button>

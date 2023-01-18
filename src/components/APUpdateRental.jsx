@@ -44,6 +44,7 @@ function APUpdateRental(props) {
     return (
         <>
             <div>
+                <h2>RENTALS</h2>
                 <form onChange={handleOnChange}>
                     <table>
                         <thead>

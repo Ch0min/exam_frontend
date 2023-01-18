@@ -16,7 +16,7 @@ function APTenantOverview(props) {
     return (
         <>
             <div>
-                <h1>TENANTS & USERS</h1>
+                <h2>TENANTS & USERS</h2>
                 <table>
                 <thead>
                 <tr>

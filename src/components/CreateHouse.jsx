@@ -38,12 +38,6 @@ function CreateHouse(props) {
             {create ? (
                 <div>
                     <div>
-                        <button onClick={() => {
-                            setCreate(false)
-                        }}>Cancel
-                        </button>
-                    </div>
-                    <div>
                         <form onChange={handleOnChange}>
                             <table>
                                 <thead>
@@ -69,6 +63,11 @@ function CreateHouse(props) {
                                     </td>
                                     <td>
                                         <button onClick={performCreateHouse} type="submit">Create</button>
+                                        <br/>
+                                        <button onClick={() => {
+                                            setCreate(false)
+                                        }}>Cancel
+                                        </button>
                                     </td>
                                 </tr>
                                 </tbody>

@@ -1,13 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import rentalFacade from "../utils/rentalFacade.js";
-import tenantFacade from "../utils/tenantFacade.js";
 import userFacade from "../utils/userFacade.js";
 
 function MyRentalAgreements() {
     const [rentals, setRentals] = useState([])
-    const [viewHouseDetails, setViewHouseDetails] = useState(0)
-    const [clicked, setClicked] = useState(false)
-
+    const [clicked, setClicked] = useState(true)
 
     const tenant = userFacade.getUserName();
     useEffect(() => {
@@ -20,14 +17,12 @@ function MyRentalAgreements() {
     }, [])
 
     const hideBtn = () => {
-        const rID = rentals.rentalID
-        let text = "Show House Details";
-        if (viewHouseDetails === rID) {
+        let text = "Show House";
+        if (!clicked) {
             text = "Hide"
         }
         return text;
     }
-
 
     return (
         <div className="table-styling">
@@ -45,21 +40,36 @@ function MyRentalAgreements() {
                 </thead>
                 <tbody>
                 {rentals.map((data) => {
-                        return (
+                    return (
                         <tr key={data.rentalID}>
                             <td>{data.rentalStartDate}</td>
                             <td>{data.rentalEndDate}</td>
                             <td>{data.rentalPriceAnnual} kr.</td>
                             <td>{data.rentalDeposit} kr.</td>
                             <td>{data.rentalContactPerson}</td>
+                            <td>
+                                {!clicked ? <button onClick={() => {
+                                        setClicked(true)
+                                    }}
+                                    >{hideBtn()}
 
+                                        <td>{data.house.houseID}</td>
+                                        <td>{data.house.houseAddress}</td>
+                                        <td>{data.house.houseCity}</td>
+
+                                    </button>
+                                    :
+                                    <button onClick={() => {
+                                        setClicked(false)
+                                    }}
+                                    >{hideBtn()}
+                                    </button>}
+                            </td>
                         </tr>
-
                     )
                 })}
                 </tbody>
             </table>
-
 
 
         </div>
